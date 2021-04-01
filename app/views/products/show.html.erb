@@ -1,0 +1,142 @@
+
+<p id="notice"><%= notice %></p>
+<head><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style type="text/css">  
+.mySlides {display:none;}
+      .para1{
+    color:red;
+    font-size:12px;
+    }
+  .tit{
+    font-size:70px;
+    font-color:white;
+
+  }
+  .bodyy{
+ background-image: url('/assets/271714.jpg') ;
+ font-size:20px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:black;
+  height: 100%;
+  }
+  .pp{
+    font-size:40px;
+  
+  }
+  .imm{
+  margin-left:100px;
+}
+#myDiv {
+margin-left:1200px;}
+.tg{
+  margin-left:90px;
+
+}
+  .seq2{
+    color:black;
+    font-size:30px;
+    height:50px;
+    align-item:center;
+    text-align:center;
+  
+
+}
+td{
+  color:black;
+}
+   .eat{
+     font-size:40px;
+   }
+   .tab{
+     font-size:20px;
+     border-spacing: 0 1em;
+color:black;
+   }
+   .card{
+     font-size:18px;
+   }
+   td
+{     font-size:18px;
+
+    padding:0 15px;
+}
+th
+{
+    padding:0 15px;
+    font-size:20px;
+
+
+}
+.imm{
+  margin-left:30px;
+}
+tr{
+  width:20px;
+
+}
+    </style>  
+</head>    
+    <body class="bodyy">
+    <div>
+
+<div id="header" style="height:15%;width:100%;">
+    <div style='float:center'>
+   <center> 
+   <p class="tit">
+   <%= image_tag("imgg.png") %>FreshEats
+</center>
+<div class="seq2">Food Item Overview</div>
+
+</div>
+</div>
+</div>
+
+<center><br>
+<p class="pp">
+  <strong>Food Item:</strong>
+  <%= @product.title %>
+</p>
+
+<p class="pp">
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<% @product.assignments.each do |a| %>
+  <p>
+  <%= a.color.color %> - <%= a.quantity %>
+  </p>
+<% end %>
+
+<script>
+function myFunction() {
+  document.getElementById("myDiv").style.marginLeft = "1200px";
+}
+myFunction();
+</script>
+</div>
+
+<center>
+<%= link_to 'Edit Item Values', edit_product_path(@product) %> 
+</center>
+
+</center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div id="myDiv" >
+
+<img class="imm" src="/assets/logo.gif" width="350" height="100" alt="Flying Bee"><br>
+<div class="tg">
+<%= link_to 'Get back to Menu Page', root_path %>
+<p></p>
+<%= link_to 'Get Back to Items Page', products_path %>
+</div>
+</strong>
+
+</div>
+</body>

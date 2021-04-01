@@ -1,0 +1,117 @@
+<head><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style type="text/css">  
+.mySlides {display:none;}
+      .para1{
+    color:red;
+    font-size:12px;
+    }
+  .tit{
+    font-size:70px;
+    font-color:white;
+
+  }
+  .bodyy{
+ background-image: url('/assets/271754.png') ;
+ font-size:20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:black;
+  height: 100%;
+  }
+  .pp{
+    font-size:40px;
+  
+  }
+  .imm{
+  margin-left:100px;
+}
+#myDiv {
+margin-left:850px;}
+#myDiv2 {
+    margin-left:1250px;
+color:black;}
+.tg{
+  margin-left:90px;
+  color:white;
+
+}
+  .seq2{
+    color:black;
+    font-size:30px;
+    height:50px;
+    align-item:center;
+    text-align:center;
+  
+
+}
+td{
+  color:black;
+}
+   .eat{
+     font-size:40px;
+   }
+   .tab{
+     font-size:20px;
+     border-spacing: 0 1em;
+color:black;
+   }
+   .card{
+     font-size:18px;
+   }
+   td
+{     font-size:18px;
+
+    padding:0 15px;
+}
+th
+{
+    padding:0 15px;
+    font-size:20px;
+
+
+}
+.imm{
+  margin-left:30px;
+}
+tr{
+  width:20px;
+
+}
+    </style>  
+</head>    
+    <body class="bodyy">
+    <div>
+
+<div id="header" style="height:15%;width:100%;">
+    <div style='float:center'>
+   <center> 
+   <p class="tit">
+   <%= image_tag("imgg.png") %>FreshEats
+</center>
+<div class="seq2">Add New Food Item</div>
+<br>
+
+</div>
+</div>
+</div>
+<script>
+function myFunction() {
+  document.getElementById("myDiv").style.marginLeft = "350px";
+}
+myFunction();
+</script>
+<div id="myDiv">
+<%= render 'form', product: @product %>
+</div>
+<br>
+<br>
+<br>
+<div id="myDiv2" >
+
+<img class="imm" src="/assets/logo.gif" width="350" height="100" alt="Flying Bee"><br>
+<div class="tg">
+<%= link_to 'Get back to Menu Page', root_path %>
+<p></p>
+<%= link_to 'Get Back to Items Page', products_path %>
+</div>
+

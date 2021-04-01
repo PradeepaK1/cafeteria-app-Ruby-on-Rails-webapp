@@ -1,0 +1,127 @@
+<p id="notice"><%= notice %></p>
+<head><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style type="text/css">  
+.mySlides {display:none;}
+      .para1{
+    color:red;
+    font-size:12px;
+    }
+  .tit{
+    font-size:70px;
+    font-color:white;
+
+  }
+  .bodyy{
+ background-image: url("271694.jpg");
+ height: 100%;
+ font-size:20px;
+ background-repeat: no-repeat;
+ background-size: cover;
+ color:black;
+  }
+
+#myDiv {
+border:red;
+}
+  .seq2{
+    color:black;
+    font-size:30px;
+    height:50px;
+    align-item:center;
+    text-align:center;
+
+}
+td{
+  color:black;
+}
+   .eat{
+     font-size:40px;
+   }
+   .tab{
+     font-size:20px;
+     border-spacing: 0 1em;
+color:black;
+   }
+   .card{
+     font-size:18px;
+   }
+   td
+{     font-size:18px;
+
+    padding:0 15px;
+}
+th
+{
+    padding:0 15px;
+    font-size:20px;
+
+
+}
+.imm{
+  margin-left:30px;
+}
+tr{
+  width:20px;
+
+}
+    </style>  
+    
+    <body class="bodyy">
+    <div>
+
+<div id="header" style="height:15%;width:100%;">
+    <div style='float:center'>
+   <center> 
+   <p class="tit">
+   <img class="logo" src="imgg.png" alt="logo" h>FreshEats
+</center>
+</div>
+
+
+</div>
+<div class="seq2">Food we Cater...</div>
+<center>
+<p class="eat">
+<img src="em.png" alt="emoji" width="50" height="50"/>Eatables</p>
+<div>
+<div style='float:left'>
+<img class="imm" src="logo.gif" width="350" height="100" alt="Flying Bee"><br>
+<%= link_to 'Get back to Menu Page', root_path %></strong>
+
+</div>
+<div style='float:left'>
+<div id="myDiv">
+<table class="tab"> 
+  <thead>
+    <tr>
+      <th>Food Item</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.title %></td>
+        <td><%= product.price %></td>
+        <td><%= link_to 'Display Details', product %></td>
+        <td><%= link_to 'Edit Item', edit_product_path(product) %></td>
+        <td><%= link_to 'Remove Item', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<script>
+function myFunction() {
+  document.getElementById("myDiv").style.marginRight = "500px";
+}
+myFunction();
+</script>
+<br>
+
+<%= link_to 'Add New Item', new_product_path %>
+
+</body>
+</div>

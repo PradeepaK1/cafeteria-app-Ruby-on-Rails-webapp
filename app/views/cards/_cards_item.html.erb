@@ -1,0 +1,89 @@
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style type="text/css">  
+.tit{
+  font-size:70px;
+}
+.bodyy{
+  background-image: url(bc.png);
+height:100%
+background-repeat: no-repeat;
+background-position: center center;
+background-size: cover;
+
+}
+.seq2{
+  color:black;
+  font-size:40px;
+  height:50px;
+  align-item:center;
+  text-align:center;
+
+}
+.he{
+    font-size:50px;
+}
+.he{
+    font-size:25px;
+}
+#myDiv {
+  }
+.fi{
+    font-size:20px;
+}
+</style>  
+<div class="new">
+<div id="header" style="height:15%;width:100%;">
+<div style='float:center'>
+<center> 
+<p class="tit">
+<%= image_tag("imgg.png") %>FreshEats
+</center>
+</div>
+</div>
+<div class="seq2"> Cart Contents Overview</div>   
+
+<body class="bodyy">
+<div>
+<div id="header" style="height:15%;width:100%;">
+    <div style='float:left'>
+<marquee behavior="slide" direction="up" scrollamount="35">
+<img src="coc.png" width="425" height="800" alt="Flying Bee">
+</marquee></div>
+<div id="myDiv"
+<% @order_items.each do |item| %>
+    <h3 class="he"><%= item.product.title %></h3>
+    <h5 class="hee"><%= item.product.price %></h5>
+
+
+    <%= form_for item, remote: true do |f| %>
+
+
+<p class="fi">
+        <%= f.hidden_field :product_id, :value => item.product.id %>
+        <%= f.number_field :quantity, :value => item.quantity.to_i %>
+        <%= f.submit "Update Cart "%>
+        <%= link_to "Remove Items", order_item_path(item), method: :delete, remote: true%>
+</p>
+    <% end %>
+    <h2 class="fi">Subtotal: <%= item.total %></h2>
+
+<% end %>
+
+
+
+
+<h3>Your current cart value: <%= current_order.subtotal %> Rs. </h3>
+<script>
+function myFunction() {
+  document.getElementById("myDiv").style.marginLeft = "450px";
+}
+myFunction();
+</script>
+<div id="header" style="height:15%;width:100%;">
+    <div style='float:left'>
+<marquee behavior="slide" direction="down" >
+<img src="7HAx.gif" width="500" height="300" alt="Flying Bee">
+</marquee></div>
+</div>
+</div>

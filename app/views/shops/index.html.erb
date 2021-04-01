@@ -1,0 +1,151 @@
+<head><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style type="text/css">  
+.mySlides {display:none;}
+      .para1{
+    color:red;
+    font-size:12px;
+    }
+  .tit{
+    font-size:70px;
+  }
+  .bodyy{
+ background-image: url("/assets/271826.jpg");
+ font-size:20px;
+ height: 100%;
+ background-repeat: no-repeat;
+ background-size: cover;
+ color:black;
+ height: 100%;
+  }
+
+.im{
+  margin-left:20px;
+}
+  .run{
+    color:black;
+    font-size:40px;
+    height:50px;
+
+
+  }
+
+   .eat{
+     font-size:40px;
+   }
+   .tab{
+     font-size:20px;
+     border-spacing: 0 1em;
+
+   }
+   .card{
+     font-size:18px;
+   }
+   td
+{     font-size:18px;
+
+    padding:0 15px;
+}
+th
+{
+    padding:0 15px;
+    font-size:20px;
+
+
+}
+tr{
+  width:20px;
+
+}
+    </style>  
+    
+    <body class="bodyy">
+    <div>
+
+<div id="header" style="height:15%;width:100%;">
+    <div style='float:center'>
+   <center> 
+   <p class="tit">
+   <img class="logo" src="imgg.png" alt="logo" h>FreshEats
+</center>
+</div>
+
+
+</div>
+<marquee class="run">Give Your Taste Buds a Fresh Treat by Ordering via FreshEats...</marquee>
+<center>
+<p class="eat">
+<img src="em.png" alt="emoji" width="50" height="50"/>Eatables</p>
+<div>
+<div id="header" style="height:15%;width:100%;">
+    <div style='float:left'>
+<img class="im" src="logo.gif" width="300" height="100" alt="Flying Bee">
+
+<br>
+<br>
+<div class="card" id="card">
+  <%= render 'cards/card'%></div>
+</div>
+<div style='float:left'>
+
+<table class="tab">
+  <thead>
+    <tr>
+      <th>Food Item</th>
+      <th>Price</th>
+      
+      <th colspan="6"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.title %></td>
+        <td><%= product.price %></td>
+        <td><%= link_to 'Display Item Details', shop_path(product) %></td>
+
+
+
+        <td>
+
+        
+          <%= form_for @order_item, remote: true  do |f|%>
+          <%= f.hidden_field :product_id, :value => product.id %>
+          <%= f.number_field :quantity, :value => 1, :min =>  1%>
+          <%= f.submit "Add to Cart "%>
+
+
+          <% end %>
+        </td>
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="w3-content w3-section" style="max-width:500px">
+</div>
+</center>
+</div>
+<div id="header" style="height:15%;width:100%;">
+    <div style='float:right'>
+</div>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+</body>
