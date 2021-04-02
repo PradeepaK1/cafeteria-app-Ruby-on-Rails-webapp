@@ -4,7 +4,7 @@
   font-size:70px;
 }
 .bodyy{
-  background-image: url('bgn.png');
+  background-image: url(/assets/bgn.png);
 
 height: 100%;
 background-repeat: no-repeat;
@@ -58,7 +58,6 @@ p{
 <p class="tit">
 <%= image_tag("imgg.png") %>FreshEats
 </center>
-</p></div>
 </div>
 </div>
 <div class="seq2"> Food Item Overview</div>   
@@ -99,7 +98,7 @@ p{
 
         }
       
-var imageSources = ["pizza.png", "burger.png","ket.png","cheese.png","chocolate.png","mcd.png","peanut.png","raddish.png","ff.png"]
+var imageSources = ["/assets/pizza.png", "/assets/burger.png","/assets/ket.png","/assets/cheese.png","/assets/chocolate.png","/assets/mcd.png","/assets/peanut.png","/assets/raddish.png","/assets/ff.png"]
 
 var index = 0;
 setInterval(function(){
@@ -109,16 +108,13 @@ setInterval(function(){
   document.getElementById("image").src = imageSources[index];
   index++;
 }, 5000);
-    </script>
-  <p></p>
+    </script><p></p>
     <div class="seq1" id="sequence">Margherita pizza is named after a queen.</div>    <p></p>
-<div float:"right">
-    <img class="im" id="image" src="<%= asset_path('queen.png')>"  align="right" width="500" height="400">
+<div float:"right"><
+    <img class="im" id="image" src="/assets/queen.png"  align="right" width="500" height="400">
  </div>   <marquee scrollamount="20"
     <div class="seq">Fresh Food Facts...</div>
 </marquee>
-</div>
 <p class="pp"><center><strong>
 <%= link_to 'Back', root_path %></strong>
 </center></p>
-</body>
