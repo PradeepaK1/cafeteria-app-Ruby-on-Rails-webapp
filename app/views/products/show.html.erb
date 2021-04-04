@@ -1,0 +1,241 @@
+
+<p id="notice"><%= notice %></p>
+<head><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style type="text/css">  
+.mySlides {display:none;
+font-family: cursive;
+}
+      .para1{
+    color:red;
+    font-family: cursive;
+font-weight:bold;
+    font-size:17px;
+    }
+  .tit{
+    font-size:70px;
+    font-color:white;
+    font-weight:normal;
+  }
+  .bodyy{
+ background-image: url('/assets/271714.jpg') ;
+ font-size:25px;
+ font-family: cursive;
+ font-weight:bold;
+
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:black;
+  height: 100%;
+  }
+  .pp{
+    font-size:40px;
+    font-family: cursive;
+    font-weight:bold;
+font-size:25px;
+  
+  }
+  .imm{
+  margin-left:100px;
+  font-family: cursive;
+
+}
+#myDiv {
+margin-left:1200px;
+font-family: cursive;
+font-size:25px;
+}
+.tg{
+  margin-left:90px;
+  font-weight:bold;
+font-size:25px;
+  font-family: cursive;
+
+}
+  .seq2{
+    color:black;
+    font-size:30px;
+    height:50px;
+    align-item:center;
+    text-align:center;
+    font-family: cursive;
+    font-weight:bold;
+
+
+}
+td{
+  color:black;
+  font-family: cursive;
+  font-weight:bold;
+font-size:25px;
+}
+   .eat{
+     font-size:40px;
+     font-family: cursive;
+
+   }
+   .tab{
+     font-size:25px;
+     border-spacing: 0 1em;
+     font-family: cursive;
+     font-weight:bold;
+
+color:black;
+   }
+   .card{
+     font-size:25px;
+     font-family: cursive;
+
+   }
+   td
+{     font-size:25px;
+font-family: cursive;
+font-weight:bold;
+
+
+    padding:0 15px;
+}
+th
+{
+    padding:0 15px;
+    font-family: cursive;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+}
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+body {
+  background-color: rgba(0,0,0,0.1);
+}
+
+/* styling paper */
+#paper {
+  width: 600px;
+  height: 450px;
+  position: relative;
+  margin: 20px auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px #888;
+}
+
+/* styling red vertical line */
+#paper::before {
+  content: '';
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 40px;
+  background-color: rgba(255,0,0,0.6);
+}
+
+/* styling blue horizontal lines */
+#pattern {
+  height: 100%;
+  background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
+}
+
+/* styling text content */
+#content {
+  padding-top: 6px;
+  padding-left: 56px;
+  padding-right: 16px;
+  line-height: 25px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 19px;
+  letter-spacing: 1px;
+  word-spacing: 5px;
+}
+.imm{
+  margin-left:30px;font-family: cursive;
+
+}
+tr{
+  width:25px;
+  font-family: cursive;
+
+  font-weight:bold;
+
+}
+    </style>  
+</head>    
+    <body class="bodyy">
+    <div>
+
+<div id="header" style="height:15%;width:100%;">
+    <div style='float:center'>
+   <center> 
+   <p class="tit">
+   <%= image_tag("imgg.png") %>FreshEats
+</center>
+<center>
+<img src="/assets/ls.png" alt="line1" width="1200" height="30"/>
+</center>
+<div class="seq2">Food Item Overview</div>
+<center>
+<img src="/assets/ldd.png" alt="line1" width="1200" height="100"/>
+</center>
+</div>
+</div>
+</div>
+
+<center><br>
+<p class="pp">
+  <strong>Food Item:</strong>
+  <%= @product.title %>
+</p>
+
+<p class="pp">
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<% @product.assignments.each do |a| %>
+  <p>
+  <%= a.color.color %> - <%= a.quantity %>
+  </p>
+<% end %>
+
+<script>
+function myFunction() {
+  document.getElementById("myDiv").style.marginLeft = "1200px";
+}
+myFunction();
+</script>
+</div>
+
+<center>
+<%= link_to 'Edit Item Values', edit_product_path(@product) %> 
+</center>
+
+</center>
+<br>
+<br>
+<
+<div id="myDiv" >
+
+<img class="imm" src="/assets/logo.gif" width="350" height="100" alt="Flying Bee"><br>
+<div class="tg">
+<%= link_to 'Get back to Menu Page', root_path %>
+<p></p>
+<%= link_to 'Get Back to Items Page', products_path %>
+</div>
+</strong>
+
+</div>
+<div id="paper">
+  <div id="pattern">
+    <div id="content">
+   <p>Rule Book: </p><%= image_tag("cat.png") %>
+
+     <p> Treat Customer with utmost satisfaction they expect. </p>
+      <p>Make your Quality market, for your brand</p>
+      <p>Feed customer's starvation with exquiste food delight </p>
+    </div>
+  </div>
+</div>
+</body>

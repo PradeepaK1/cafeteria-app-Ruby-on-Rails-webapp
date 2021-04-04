@@ -1,0 +1,199 @@
+<head><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style type="text/css">  
+.mySlides {display:none;
+font-family: cursive;
+}
+      .para1{
+    color:red;
+    font-size:12px;
+    font-family: cursive;
+    font-weight: bold;
+
+    }
+  .tit{
+    font-size:70px;
+
+  }
+  .bodyy{
+ background-image: url("/assets/271826.jpg");
+ font-size:20px;
+ height: 100%;
+ background-repeat: no-repeat;
+ background-size: cover;
+ color:black;
+
+ height: 100%;
+ font-family: cursive;
+
+  }
+
+.im{
+  margin-left:20px;
+  font-family: cursive;
+  font-weight: bold;
+	
+}
+  .run{
+    color:black;
+    font-size:40px;
+    font-family: cursive;
+    font-weight: bold;
+
+    height:50px;
+
+
+  }
+
+   .eat:hover{
+     font-family: cursive;
+     font-weight: bold;
+     -webkit-transition: transform .2s linear;
+     -moz-transition: transform .2s linear;
+     -o-transition: transform .2s linear;
+     transition: transform .2s linear;
+     -webkit-transform: scale(1.5);
+     -moz-transform: scale(1.5);
+     -o-transform: scale(1.5);
+     transform: scale(1.5);
+     font-size:40px;
+
+   }
+   .tab{
+     font-size:20px;
+     font-family: cursive;
+     font-weight: bold;
+
+     border-spacing: 0 1em;
+
+   }
+   .card:hover{
+     font-size:25px;
+     font-family: cursive;
+     font-weight: bold;
+	
+   }
+   td
+{     font-size:20px;
+font-family: cursive;
+font-weight: bold;
+
+
+    padding:0 15px;
+}
+th
+{
+    padding:0 15px;
+    font-size:20px;
+    font-family: cursive;
+
+    font-weight: bold;
+
+
+}
+tr{
+  width:20px;
+  font-family: cursive;
+  font-weight: bold;
+
+}
+    </style>  
+    
+    <body class="bodyy">
+    <div>
+
+<div id="header" style="height:15%;width:100%;">
+    <div style='float:center'>
+   <center> 
+   <p class="tit">
+   <img class="logo" src="imgg.png" alt="logo" h>FreshEats
+</center>
+
+</div>
+
+
+</div>
+<center>
+<img src="/assets/ls.png" alt="line1" width="1200" height="30"/>
+</center>
+<marquee scrollamount="20" class="run">Give Your Taste Buds a Fresh Treat by Ordering via FreshEats...</marquee>
+<center><div class="eat">
+<img src="em.png" alt="emoji" width="50" height="50"/>Eatables
+</div><center>
+<img src="/assets/ldd.png" alt="line1" width="1200" height="110"/>
+</center>
+
+<div>
+
+<div id="header" style="height:15%;width:100%;">
+    <div style='float:left'>
+<img class="im" src="logo.gif" width="300" height="100" alt="Flying Bee">
+
+<br>
+<br>
+<div class="card" id="card">
+  <%= render 'cards/card'%></div>
+</div>
+<div style='float:left'>
+
+<table class="tab">
+  <thead>
+    <tr>
+      <th>Food Item</th>
+      <th>Price</th>
+      
+      <th colspan="6"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.title %></td>
+        <td><%= product.price %></td>
+        <td><%= link_to 'Display Item Details', shop_path(product) %></td>
+
+
+
+        <td>
+
+        
+          <%= form_for @order_item, remote: true  do |f|%>
+          <%= f.hidden_field :product_id, :value => product.id %>
+          <%= f.number_field :quantity, :value => 1, :min =>  1%>
+          <%= f.submit "Add to Cart "%>
+
+
+          <% end %>
+        </td>
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="w3-content w3-section" style="max-width:500px">
+</div>
+</center>
+</div>
+<div id="header" style="height:15%;width:100%;">
+    <div style='float:right'>
+</div>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+</body>

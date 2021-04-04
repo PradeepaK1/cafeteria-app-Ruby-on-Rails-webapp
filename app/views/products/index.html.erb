@@ -1,0 +1,169 @@
+<p id="notice"><%= notice %></p>
+<head><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style type="text/css">  
+.mySlides {display:none;}
+      .para1{
+    color:red;
+    font-family: cursive;
+    font-size:25px;
+    font-weight:bold;
+
+    }
+  .tit{
+    font-size:70px;
+    font-color:white;
+    font-weight:normal;
+  }
+  .bodyy{
+ background-image: url("271694.jpg");
+ height: 100%;
+ font-size:25px;
+ font-weight:bold; background-repeat: no-repeat;
+ background-size: cover;
+ font-family: cursive;
+
+ color:black;
+  }
+
+#myDiv {
+border:red;
+font-family: cursive;
+font-size:25px;
+font-weight:bold;
+
+}
+  .seq2{
+    color:black;
+    font-size:30px;
+    font-family: cursive;
+
+    height:50px;
+    align-item:center;
+    text-align:center;
+    font-weight:bold;
+}
+td{
+  color:black;
+  font-family: cursive;
+  font-size:20px;
+font-weight:bold;
+
+}
+   .eat{
+     font-size:40px;
+     font-family: cursive;
+    }
+   .tab{
+    font-size:20px;
+    font-weight:bold;
+         border-spacing: 0 1em;
+     font-family: cursive;
+
+color:black;
+   }
+   .card{
+    ont-size:25px;
+    font-weight:bold;     font-family: cursive;
+
+   }
+   td
+{     
+font-family: cursive;
+ont-size:20px;
+font-weight:bold;
+line-height: 40px;
+
+    padding:0 15px;
+}
+th
+{
+    padding:0 15px;
+    font-size:20px;
+    font-family: cursive;
+font-size:25px;
+font-weight:bold;
+
+}
+.imm{
+  margin-left:30px;
+  font-family: cursive;
+  ont-size:25px;
+  font-weight:bold;
+}
+tr{
+  width:20px;
+  line-height: 40px;
+  font-family: cursive;
+  font-size:20px;
+  font-weight:bold;
+}
+    </style>  
+    
+    <body class="bodyy">
+
+    <div>
+
+<div id="header" style="height:15%;width:100%;">
+    <div style='float:center'>
+   <center> 
+   <p class="tit">
+   <img class="logo" src="imgg.png" alt="logo" h>FreshEats
+</center>
+</div>
+
+
+</div>
+<center>
+<img src="/assets/ls.png" alt="line1" width="1200" height="30"/>
+</center>
+<div class="seq2">Food we Cater...</div>
+
+<center>
+<div class="eat">
+<img src="em.png" alt="emoji" width="50" height="50"/>Eatables
+<center>
+<img src="/assets/ldd.png" alt="line1" width="1200" height="110"/>
+</center>
+</div>
+<div>
+<div style='float:left'>
+<img class="imm" src="logo.gif" width="350" height="100" alt="Flying Bee"><br>
+<%= link_to 'Get back to Menu Page', root_path %></strong>
+
+</div>
+<div style='float:left'>
+<div id="myDiv">
+<table class="tab"> 
+  <thead>
+    <tr>
+      <th>Food Item</th>
+      <th>Price</th>
+      <th colspan="6"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.title %></td>
+        <td><%= product.price %></td>
+        <td><%= link_to 'Display Details', product %></td>
+        <td><%= link_to 'Edit Item', edit_product_path(product) %></td>
+        <td><%= link_to 'Remove Item', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<script>
+function myFunction() {
+  document.getElementById("myDiv").style.marginRight = "500px";
+}
+myFunction();
+</script>
+<br>
+
+<%= link_to 'Add New Item', new_product_path %>
+
+</body>
+</div>
