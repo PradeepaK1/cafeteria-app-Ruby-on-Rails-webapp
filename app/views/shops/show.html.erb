@@ -2,9 +2,13 @@
 <style type="text/css">  
 .tit{
   font-size:70px;
+  font-family: sans-serif;
+  font-weight:normal;
+
 }
 .bodyy{
   background-image: url(/assets/bgn.png);
+  font-family: cursive;
 
 height: 100%;
 background-repeat: no-repeat;
@@ -12,7 +16,9 @@ background-size: cover;
 }
 p{
   align-items:center;
-  font-size:20px;
+  font-size:25px;
+  font-family: cursive;
+  font-weight:bold;
 
 }
 .seq{
@@ -21,6 +27,8 @@ p{
     height:50px;
     align-item:right;
     text-align:right;
+    font-family: cursive;
+    font-weight:bold;
 
 }
 .seq1{
@@ -30,7 +38,10 @@ p{
     align-item:right;
     text-align:center;
     padding-left:1200px;
+    font-family: cursive;
+    font-size:25px;
 
+    font-weight:bold;
 }
 .seq2{
     color:black;
@@ -38,15 +49,22 @@ p{
     height:50px;
     align-item:center;
     text-align:center;
+    font-family: cursive;
+    font-weight:bold;
 
 }
 .pp{
   font-size:35px;
+  font-family: cursive;
+  font-weight:bold;
 
 }
 .im{
   align-item:left;
   padding-right:50px;
+  font-family: cursive;
+  font-weight:bold;
+
 }
     </style>  
 
@@ -60,8 +78,13 @@ p{
 </center>
 </div>
 </div>
+<center>
+<img src="/assets/ls.png" alt="line1" width="1200" height="30"/>
+</center>
 <div class="seq2"> Food Item Overview</div>   
-
+<center>
+<img src="/assets/ll.png" alt="line1" width="1200" height="100"/>
+</center>
 <center>
 
 <p class="pp">
@@ -78,7 +101,6 @@ p{
 
   <%= assignment.color.color %>
   <%= assignment.quantity %>
-
 <% end %>
 <script>
         var example = ['The most expensive pizza in the world costs $12,000 dollars.', 'One fast-food burger can have meat from 100 different cows.', 'Ketchup used to be used as a medicine.', 'Cheese is the most stolen food in the world.','Chocolate has been used as a currency in Mexico and South America.','McDonald’s sells 2.5 billion hamburgers every year.','You can find peanuts in dynamite.','In ancient Egyptian days, radishes, onions, and garlic were given to workers as wages.','French fries originated in Belgium, not France!'];
@@ -111,7 +133,7 @@ setInterval(function(){
     </script><p></p>
     <div class="seq1" id="sequence">Margherita pizza is named after a queen.</div>    <p></p>
 <div float:"right"><
-    <img class="im" id="image" src="/assets/queen.png"  align="right" width="500" height="400">
+    <img class="im" id="image" src="/assets/queen.png"  align="right" width="300" height="300">
  </div>   <marquee scrollamount="20"
     <div class="seq">Fresh Food Facts...</div>
 </marquee>
