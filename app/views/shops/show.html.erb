@@ -98,17 +98,33 @@ body {
     font-weight:bold;
 
 }
-.pp{
+.pp:hover{
   font-size:35px;
   font-family: cursive;
   font-weight:bold;
+  -webkit-transition: transform .2s linear;
+  -moz-transition: transform .2s linear;
+  -o-transition: transform .2s linear;
+  transition: transform .2s linear;
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
 
 }
-.im{
+.im:hover{
   align-item:left;
   padding-right:50px;
   font-family: cursive;
   font-weight:bold;
+  -webkit-transition: transform .2s linear;
+  -moz-transition: transform .2s linear;
+  -o-transition: transform .2s linear;
+  transition: transform .2s linear;
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
 
 }
     </style>  
@@ -186,15 +202,3 @@ setInterval(function(){
 <%= link_to 'Back', root_path %></strong>
 </center></p>
 
-
-<div id="paper">
-  <div id="pattern">
-    <div id="content">
-   <p>Rule Book: </p><%= image_tag("cat.png") %>
-
-     <p> Treat Customer with utmost satisfaction they expect. </p>
-      <p>Make your Quality market, for your brand</p>
-      <p>Feed customer's starvation with exquiste food delight </p>
-    </div>
-  </div>
-</div>
