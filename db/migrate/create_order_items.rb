@@ -6,7 +6,6 @@ class CreateOrderItems < ActiveRecord::Migration[5.2]
       t.integer :order_id
       t.decimal :total
       t.decimal :unit_price
-
       t.timestamps
     end
   end
